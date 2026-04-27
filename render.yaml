@@ -8,11 +8,15 @@ services:
     dockerContext: .
     envVars:
       - key: SPRING_DATASOURCE_URL
-        sync: false
+        value: "jdbc:h2:mem:campuscore;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=MySQL"
       - key: SPRING_DATASOURCE_USERNAME
-        sync: false
+        value: "sa"
       - key: SPRING_DATASOURCE_PASSWORD
-        sync: false
+        value: "password"
+      - key: SPRING_DATASOURCE_DRIVER_CLASS_NAME
+        value: "org.h2.Driver"
+      - key: SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT
+        value: "org.hibernate.dialect.H2Dialect"
       - key: JWT_SECRET
         sync: false
       - key: JWT_EXPIRATION
